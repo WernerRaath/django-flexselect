@@ -47,7 +47,6 @@ def choices_from_instance(instance, widget, value=-1):
         for trigger_field in widget.trigger_fields:
             getattr(instance, trigger_field)
     except (ObjectDoesNotExist, AttributeError):
-        print value
         try:
             return choices_from_queryset(widget.default_queryset(instance, value))
         except NotImplementedError:
