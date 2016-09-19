@@ -70,7 +70,7 @@ flexselect.ajax = function(event) {
 		context: flexselect.get_element(event.data.base_field),
 		success: event.data.success,
 	    error: function(data) {
-	    	alert("Something went wrong with flexselect.");
+	    	console.log("Something went wrong with flexselect.");
 	    },
 	});
 }
