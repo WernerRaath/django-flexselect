@@ -1,5 +1,6 @@
-from django.conf.urls import patterns
+from django.conf.urls import include, url
+from flexselect import views as flex_views
 
-urlpatterns = patterns('flexselect.views',
-    (r'field_changed', 'field_changed'),
-)
+urlpatterns = [
+	url(r'^field_changed/?', flex_views.field_changed, name='field_changed')
+]
