@@ -13,6 +13,7 @@ def field_changed(request):
     Ajax callback called when a trigger field or base field has changed. Returns
     html for new options and details for the dependent field as json.
     """
+    widget = None
     hashed_name = request.POST.__getitem__('hashed_name')
     if hashed_name in FlexSelectWidget.instances:
         widget = FlexSelectWidget.instances[hashed_name]
