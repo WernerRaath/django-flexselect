@@ -5,6 +5,8 @@ import json
 
 from django.forms.widgets import Select, SelectMultiple
 from django.utils.safestring import mark_safe
+# Python3: Updated from `smart_unicode` to `smart_text`
+# http://django.readthedocs.io/en/1.6.x/topics/python3.html#string-handling
 from django.utils.encoding import smart_text
 from django.conf import settings
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
@@ -206,6 +208,7 @@ class FlexSelectMultipleWidget(SelectMultiple):
             self.base_field.name,
             self.modeladmin.__class__.__name__,
         ])
+        salted_string = salted_string.encode('utf-8')
         return "_%s" % hashlib.sha1(salted_string).hexdigest()
 
     def _get_instance(self):
