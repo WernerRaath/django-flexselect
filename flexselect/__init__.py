@@ -5,7 +5,7 @@ import json
 
 from django.forms.widgets import Select, SelectMultiple
 from django.utils.safestring import mark_safe
-from django.utils.encoding import smart_unicode
+from django.utils.encoding import smart_text
 from django.conf import settings
 from django.core.exceptions import ValidationError, ObjectDoesNotExist
 
@@ -30,7 +30,7 @@ def choices_from_queryset(queryset):
     """
     return chain(
         [EMPTY_CHOICE],
-        [(o.pk, smart_unicode(o)) for o in queryset],
+        [(o.pk, smart_text(o)) for o in queryset],
     )
 
 
