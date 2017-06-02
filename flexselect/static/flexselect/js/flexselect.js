@@ -63,7 +63,7 @@ base_field) {
  */
 flexselect.ajax = function(event) {
 	$.ajax({
-		url: '/flexselect/field_changed',
+		url: '/auth/flexselect/field_changed',
 		data: $('form').serialize() + '&hashed_name=' + event.data.hashed_name
 			  + event.data.data,
 		type: 'post',
