@@ -24,7 +24,7 @@ def field_changed(request):
 
     if bool(int(request.POST.__getitem__('include_options'))):
         choices = choices_from_instance(instance, widget)
-        options = Select(choices=choices).render_options([], [])
+        options = Select(choices=choices).render_options([])
     else:
         options = None
 
