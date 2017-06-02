@@ -6,7 +6,8 @@ from django.contrib.auth.decorators import login_required
 
 from flexselect import (FlexSelectWidget, FlexSelectMultipleWidget, choices_from_instance, instance_from_request)
 
-import logging logger = logging.getLogger(__name__)
+import logging
+logger = logging.getLogger(__name__)
 
 @login_required
 def field_changed(request):
