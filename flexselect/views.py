@@ -32,7 +32,7 @@ def field_changed(request):
     if include_options:
         logger.info("include_options", include_options)
         choices = choices_from_instance(instance, widget)
-        options = Select(choices=choices).render_options([])
+        options = Select(choices=choices).render_options(choices, [])
     else:
         logger.info("POST does not contain attribute: 'include_options' ")
         options = None
