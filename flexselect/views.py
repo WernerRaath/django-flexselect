@@ -16,7 +16,7 @@ def field_changed(request):
     html for new options and details for the dependent field as json.
     """
     widget = None
-    logger.info("data", request.POST.data)
+    logger.info("data", request.POST)
     hashed_name = request.POST.get('hashed_name', "None")
     logger.info("Hashed name:", hashed_name)
     if hashed_name in FlexSelectWidget.instances:
