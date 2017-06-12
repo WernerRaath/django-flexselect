@@ -62,6 +62,9 @@ base_field) {
  * the keys "hashed_name", "base_field", "data" and "success".
  */
 flexselect.ajax = function(event) {
+	console.log($('form').serialize());
+	console.log(event.data.hashed_name);
+	console.log(event.data.data);
 	$.ajax({
 		url: '/auth/flexselect/field_changed',
 		data: $('form').serialize() + '&hashed_name=' + event.data.hashed_name
