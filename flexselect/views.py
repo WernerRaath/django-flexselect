@@ -40,7 +40,8 @@ def field_changed(request):
         if widget is not None:
             instance = instance_from_request(request, widget)
             choices = choices_from_instance(instance, widget)
-            options = Select(choices=choices).render_options(choices, [])
+            select = Select(choices=choices)
+            options = select.render_options([])
 
     return HttpResponse(json.dumps({
         'options': options,
